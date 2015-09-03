@@ -43,12 +43,6 @@ $(function() {
 
   console.log("document2 loaded2");
 
-});
-
-$( document ).ready(function() {
-
-  console.log( "document2 loaded" );
-
   Test2.init();
 
 });

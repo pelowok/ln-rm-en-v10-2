@@ -38,12 +38,6 @@ $(function() {
 
   console.log("document loaded");
 
-});
-
-$( document ).ready(function() {
-
-  console.log( "document loaded2" );
-
   Test.init();
 
 });
