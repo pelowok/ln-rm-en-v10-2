@@ -5,7 +5,10 @@
 var MNIZ = MNIZ || [];
 
 // We define a function that takes one parameter named $.
-var Test2 = (function ($) {
+
+
+var JqueryTests = $( document ).ready(function(){
+// same as: var JqueryTests = (function ($) {
 
   // declare a variable that will be returned when the function runs.
   // This pub variable will be attached as a property to the prototype
@@ -14,14 +17,11 @@ var Test2 = (function ($) {
   var pub = {};
 
   var init = function () {
-    console.log('init2');
-  };
 
-  var final = function () {
-    console.log(MNIZ.potato);
-  };
+    console.log('jquerytests-init');
 
-  MNIZ.potato2 = 'potato2';
+
+  };
 
   pub.init = init;
 
@@ -31,21 +31,28 @@ var Test2 = (function ($) {
 }(jQuery));
 
 
-
-
 $( window ).load(function() {
 
-  console.log( "window2 loaded" );
-
-  console.log(MNIZ.potato1);
+  console.log( "jquerytests-window loaded" );
 
 });
 
 // Shorthand for: $( document ).ready(function(){...});
 $(function() {
 
-  console.log("document2 loaded2");
+  console.log("jquerytests-document loaded");
 
-  Test2.init();
+  JqueryTests.init();
+  //Declarations.globalcall('periscope up');
+
+  $(".sb-red").click(function(){
+    $(this).removeClass('sb-red');
+    $(this).addClass('sb-blue');
+  });
+
+  $(".sb-blue").click(function(){
+    $(this).removeClass('sb-blue');
+    $(this).addClass('sb-red');
+  });
 
 });

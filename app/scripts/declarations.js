@@ -5,7 +5,7 @@
 var MNIZ = MNIZ || [];
 
 // We define a function that takes one parameter named $.
-var Test2 = (function ($) {
+var Declarations = (function ($) {
 
   // declare a variable that will be returned when the function runs.
   // This pub variable will be attached as a property to the prototype
@@ -14,16 +14,31 @@ var Test2 = (function ($) {
   var pub = {};
 
   var init = function () {
-    console.log('init2');
+
+    console.log('declarations-init');
+
+    MNIZ.foo1 = function(callback){
+
+      return callback + ' : potato';
+
+    };
+
+    MNIZ.foo2 = [1, 'shoes', 22/3];
+    MNIZ.foo3 = 'foo3';
+    MNIZ.foo4 = 'foo4';
+
   };
 
-  var final = function () {
-    console.log(MNIZ.potato);
-  };
+  var globalcall = function(callback){
 
-  MNIZ.potato2 = 'potato2';
+    alert(callback);
+
+    return callback;
+
+  }
 
   pub.init = init;
+  pub.globalcall = globalcall;
 
   return pub;
 
@@ -35,17 +50,17 @@ var Test2 = (function ($) {
 
 $( window ).load(function() {
 
-  console.log( "window2 loaded" );
+  console.log( "declarations-window loaded" );
 
-  console.log(MNIZ.potato1);
+  console.log(MNIZ);
 
 });
 
 // Shorthand for: $( document ).ready(function(){...});
 $(function() {
 
-  console.log("document2 loaded2");
+  console.log("declarations-document loaded");
 
-  Test2.init();
+  Declarations.init();
 
 });
