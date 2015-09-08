@@ -1,11 +1,11 @@
 'use strict';
 
-//scripted by pelowok 9/2/2015
+//scripted by pelowok 9/7/2015
 
 var MNIZ = MNIZ || [];
 
 // We define a function that takes one parameter named $.
-var Test2 = (function ($) {
+var Jscontent = (function ($) {
 
   // declare a variable that will be returned when the function runs.
   // This pub variable will be attached as a property to the prototype
@@ -14,16 +14,13 @@ var Test2 = (function ($) {
   var pub = {};
 
   var init = function () {
-    console.log('init2');
+    // do stuff
   };
-
-  var final = function () {
-    console.log(MNIZ.potato);
-  };
-
-  MNIZ.potato2 = 'potato2';
 
   pub.init = init;
+
+  // Declare any namespace variable to namespace
+  //MNIZ.variablename = variableValue;
 
   return pub;
 
@@ -31,25 +28,11 @@ var Test2 = (function ($) {
 }(jQuery));
 
 
-
-
-$( window ).load(function() {
-
-  console.log( "window2 loaded" );
-
-  console.log(MNIZ.potato1);
-
-  // run namespace.property.method();
-  console.log('running MNIZ.Jscontent.init() from test2.js..');
-  //MNIZ.Jscontent.init();
-
-});
-
 // Shorthand for: $( document ).ready(function(){...});
 $(function() {
 
-  console.log("document2 loaded2");
+  console.log("Jscontent loaded");
 
-  Test2.init();
+  Jscontent.init();
 
 });
