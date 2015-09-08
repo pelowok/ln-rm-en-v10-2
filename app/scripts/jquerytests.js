@@ -20,6 +20,7 @@ var JqueryTests = $( document ).ready(function(){
 
     console.log('jquerytests-init');
 
+    //jQuery('video, object').maximage('maxcover');
 
   };
 
